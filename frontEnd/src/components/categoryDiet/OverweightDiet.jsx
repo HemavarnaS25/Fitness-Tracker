@@ -1,5 +1,4 @@
 import React from "react";
-
 const OverweightDiet = () => {
   return (
   <body>
@@ -8,8 +7,7 @@ const OverweightDiet = () => {
       <img 
         src="./src/assets/Overweight-diet.webp" 
         alt="Healthy balanced diet" 
-        style={{ width: "100%", maxWidth: "500px", borderRadius: "10px" }} 
-      />
+        style={{ width: "100%", maxWidth: "500px", borderRadius: "10px" }} />
       <ul>
         <li>Reduce sugar and refined carbs.</li>
         <li>Increase fiber intake with fruits, vegetables, and whole grains.</li>
@@ -21,5 +19,4 @@ const OverweightDiet = () => {
   </body>
   );
 };
-
 export default OverweightDiet;

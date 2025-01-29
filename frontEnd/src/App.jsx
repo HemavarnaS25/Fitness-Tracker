@@ -1,4 +1,4 @@
-
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./components/PageEntry/Dashboard";
 import Bmi from "./components/PageDashboard/Bmi";
@@ -12,31 +12,32 @@ import UnderweightDiet from "./components/categoryDiet/UnderweightDiet";
 import UnderweightExercise from "./components/categoryExercise/UnderweightExercise";
 import NormalweightExercise from "./components/categoryExercise/NormalweightExercise";
 import OverweightExercise from "./components/categoryExercise/OverweightExercise";
-
+import './styles.css';
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userEmail, setUserEmail] = useState('');
   return (
     <div>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/bmi" element={<Bmi />} />
-          <Route path="/diet" element={<Diet />} />
-          <Route path="/exercise" element={<Exercise />} />
-          <Route path="/n-d" element={<NormalDiet />} />
-          <Route path ="/o-d" element={<OverweightDiet />} />
-          <Route path ="/u-d" element={<UnderweightDiet />} />
-          <Route path ="/n-e" element={<NormalweightExercise />} />
-          <Route path ="/o-e" element={<OverweightExercise />} />
-          <Route path ="/u-e" element={<UnderweightExercise />} />
-
-
+          <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} setUserEmail={setUserEmail} />} />
+          {isLoggedIn && (
+            <><Route path="/dashboard" element={<Dashboard userEmail={userEmail} />} />
+              <Route path="/bmi" element={<Bmi />} />
+              <Route path="/diet" element={<Diet />} />
+              <Route path="/exercise" element={<Exercise />} />
+              <Route path="/n-d" element={<NormalDiet />} />
+              <Route path="/o-d" element={<OverweightDiet />} />
+              <Route path="/u-d" element={<UnderweightDiet />} />
+              <Route path="/n-e" element={<NormalweightExercise />} />
+              <Route path="/o-e" element={<OverweightExercise />} />
+              <Route path="/u-e" element={<UnderweightExercise />} />
+            </>
+          )}
         </Routes>
       </BrowserRouter>
-      {/* <h1>Welcome to App Page</h1> */}
     </div>
   );
 };
-
 export default App;

@@ -1,16 +1,12 @@
 import React from "react";
-
 const UnderweightDiet = () => {
   return (
-    
-      <div>
-         
-      <h1>Diet Plan for Underweight Individuals</h1>
+    <div>
+         <h1>Diet Plan for Underweight Individuals</h1>
       <img 
         src=".\src\assets\Underweight-diet.jpg" 
         alt="Healthy balanced diet" 
-        style={{ width: "100%", maxWidth: "500px", borderRadius: "10px" }} 
-      />
+        style={{ width: "100%", maxWidth: "500px", borderRadius: "10px" }} />
       <ul>
         <li>Eat more calorie-dense foods like nuts, avocados, and dairy.</li>
         <li>Increase protein intake with eggs, chicken, and lentils.</li>
@@ -22,5 +18,4 @@ const UnderweightDiet = () => {
     
   );
 };
-
 export default UnderweightDiet;

@@ -4,20 +4,16 @@ const Bmi = () => {
   const [height, setHeight] = useState("");
   const [bmi, setBmi] = useState(null);
   const [category, setCategory] = useState("");
-
   const calculateBmi = () => {
     if (!weight || !height) {
       alert("Please enter both weight and height.");
       return;
     }
-
     const heightInMeters = height / 100;
     const bmiValue = (weight / (heightInMeters * heightInMeters)).toFixed(2);
-
-    setBmi(bmiValue);
+setBmi(bmiValue);
     setCategory(getBmiCategory(bmiValue));
   };
-
   const getBmiCategory = (bmi) => {
     if (bmi < 18.5) 
         return "Underweight";
@@ -27,7 +23,6 @@ const Bmi = () => {
         return "Overweight";
     return "Obese";
   };
-
   return (
     <body>
       <div>
@@ -36,14 +31,12 @@ const Bmi = () => {
         type="number"
         placeholder="Weight (kg)"
         value={weight}
-        onChange={(e) => setWeight(e.target.value)}
-      />
+        onChange={(e) => setWeight(e.target.value)}/>
       <input
         type="number"
         placeholder="Height(cm)"
         value={height}
-        onChange={(e) => setHeight(e.target.value)}
-      />
+        onChange={(e) => setHeight(e.target.value)}/>
       <button onClick={calculateBmi}>Calculate BMI</button>
       {bmi && (
         <div>
@@ -55,5 +48,4 @@ const Bmi = () => {
     </body>
   );
 };
-
 export default Bmi;

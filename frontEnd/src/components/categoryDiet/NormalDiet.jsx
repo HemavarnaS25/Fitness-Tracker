@@ -1,5 +1,4 @@
 import React from "react";
-
 const NormalDiet = () => {
   return (
     <body>
@@ -8,10 +7,8 @@ const NormalDiet = () => {
       <img 
         src="./src/assets/Normal-diet.jpg" 
         alt="Healthy balanced diet" 
-        style={{ width: "100%", maxWidth: "500px", borderRadius: "10px" }} 
-      />
-      <ul>
-            
+        style={{ width: "100%", maxWidth: "500px", borderRadius: "10px" }} />
+      <ul>     
         <li> 
           Maintain a well-balanced diet with proteins, carbs, and healthy fats.
           </li>
@@ -24,6 +21,5 @@ const NormalDiet = () => {
     </body>
   );
 };
-
 export default NormalDiet;
 

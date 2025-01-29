@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-// import './css/Signup.css';
 import axios from 'axios';
-
 const Signup = () => {
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-
   const handleSignup=async(event)=>{
     event.preventDefault()
-    
     try{
       console.log("Event Trigger");
       const req = await axios.post("http://localhost:3001/signup",{
@@ -29,10 +25,9 @@ const Signup = () => {
       console.log(err)
   }
 }
-
   return (
     <div>
-    <div>
+    <div >
       <h2>Signup</h2>
       <form onSubmit={handleSignup}>
         <label htmlFor="firstname">First Name:</label>
@@ -42,8 +37,7 @@ const Signup = () => {
           name="firstname" 
           value={firstname}
           onChange={(e) => setFirstname(e.target.value)}
-          required 
-        />
+          required  />
         <label htmlFor="lastname">Last Name:</label>
         <input 
           type="text" 
@@ -51,8 +45,7 @@ const Signup = () => {
           name="lastname" 
           value={lastname}
           onChange={(e) => setLastname(e.target.value)}
-          required 
-        />
+          required  />
         <label htmlFor="email">Email:</label>
         <input 
           type="email" 
@@ -60,8 +53,7 @@ const Signup = () => {
           name="email" 
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          required 
-        />
+          required />
         <label htmlFor="password">Password:</label>
         <input 
           type="password" 
@@ -69,8 +61,7 @@ const Signup = () => {
           name="password" 
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          required 
-        />
+          required />
         <button type="submit">Signup</button>
       </form>
       <p >
@@ -80,17 +71,4 @@ const Signup = () => {
     </div>
   );
 };
-
-// const pageStyle = {
-//     backgroundImage:
-//       'url("https://wallpapercave.com/wp/wp6324222.png")', 
-//     backgroundSize: "cover",
-//     backgroundPosition: "center",
-//     backgroundRepeat: "no-repeat",
-//     height: "100vh",
-//     display: "flex",
-//     alignItems: "center",
-//     justifyContent: "center",
-//   };
-
 export default Signup;
