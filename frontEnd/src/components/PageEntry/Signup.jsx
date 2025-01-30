@@ -11,7 +11,7 @@ const Signup = () => {
     event.preventDefault()
     try{
       console.log("Event Trigger");
-      const req = await axios.post("https://fitness-tracker-mmol.onrender.com/signup",{
+      const req = await axios.post("https://fitness-ppx5.onrender.com/signup",{
       firstname: firstname,
       lastname: lastname,
       email: email,
