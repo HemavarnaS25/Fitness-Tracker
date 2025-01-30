@@ -8,7 +8,7 @@ const Login = ({ setIsLoggedIn, setUserEmail }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const req = await axios.post("https://fitness-tracker-mmol.onrender.com", {
+      const req = await axios.post("https://fitness-tracker-mmol.onrender.com/login", {
         email: email,
         password: password,
       });
